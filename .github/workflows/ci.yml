@@ -1,27 +1,35 @@
-name: CI
+name: CI Checks
 
+# El workflow se ejecutará en los eventos push y pull_request
 on:
   push:
+    branches: [ main, feat/** ]
   pull_request:
+    branches: [ main ]
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+  build-and-test:
+    runs-on: ubuntu-latest # Ejecuta el trabajo en un runner de Ubuntu
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+      - name: Checkout Code
+        uses: actions/checkout@v4 # Paso para clonar el repositorio
 
-      - name: Setup Node
-        uses: actions/setup-node@v3
+      # Configura Node.js (versión recomendada)
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: '20' # O la versión LTS que prefieras
 
+      # Instala las dependencias, incluyendo Prettier (debes haberlo añadido a package.json)
       - name: Install dependencies
-        run: npm install
+        run: npm install prettier
 
-      - name: Prettier check
-        run: npx prettier . --check
+      # Ejecuta la revisión de formato con Prettier
+      - name: Run Prettier Check
+        run: npx prettier --check . # El '.' revisa todos los archivos no ignorados
 
-      - name: Run tests
+      # Ejecuta las pruebas (asumiendo que usas el módulo 'test' nativo de Node.js)
+      - name: Run Tests
+        # El comando 'node --test' busca archivos *.test.js, como 'tests/suma.test.js'
         run: node --test
