@@ -1,9 +1,9 @@
 // Función para agregar items a la lista
 export function agregarItem(texto) {
-  const lista = document.getElementById("lista");
-  const li = document.createElement("li");
+  const lista = document.getElementById('lista');
+  const li = document.createElement('li');
   li.textContent = texto;
   lista.appendChild(li);
 }
 
-console.log("App lista");
+console.log('App lista');
