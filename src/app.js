@@ -1,3 +1,4 @@
+// Función para agregar items a la lista
 export function agregarItem(texto) {
   const lista = document.getElementById("lista");
   const li = document.createElement("li");
@@ -6,4 +7,3 @@ export function agregarItem(texto) {
 }
 
 console.log("App lista");
-
