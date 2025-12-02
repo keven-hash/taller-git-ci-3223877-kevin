@@ -1,0 +1,27 @@
+{
+  "name": "taller-git-ci-3223877-kevin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/keven-hash/taller-git-ci-3223877-kevin.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/keven-hash/taller-git-ci-3223877-kevin/issues"
+  },
+  "homepage": "https://github.com/keven-hash/taller-git-ci-3223877-kevin#readme",
+  "devDependencies": {
+    "prettier": "^3.7.3"
+  }
+}
